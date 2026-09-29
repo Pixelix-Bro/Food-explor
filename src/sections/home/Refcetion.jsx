@@ -11,8 +11,8 @@ export default function Refcetion() {
   useEffect(() => {
     async function getapi() {
       try {
-        const { data } = await ApiClient.get('/Ref')
-        setData(data)
+        const { data } = await ApiClient.get('data/data.json')
+        setData(data.Ref)
       } catch (error) {
         console.log(error.message)
       }
