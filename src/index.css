@@ -8,6 +8,23 @@
   padding-right: 15px;
 }
 
-button{
+button {
   cursor: pointer;
+}
+
+
+body{
+  background-color: #000A0F;
+}
+
+.refcetion::-webkit-scrollbar {
+  height: 1px;
+}
+
+.refcetion::-webkit-scrollbar-track {
+  background-color: #000A0F;
+}
+
+.refcetion::-webkit-scrollbar-thumb {
+  background-color: red;
 }
