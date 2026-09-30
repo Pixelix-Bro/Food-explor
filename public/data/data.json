@@ -2,7 +2,7 @@
   "Ref": [
     {
       "id": 1,
-      "img": "../assets/Images/One.png",
+      "img": "/assets/Images/One.png",
       "title": "Salada Ravanello",
       "discription": "Rabanetes, folhas verdes e molho agridoce salpicados com gergelim. O pão naan dá um toque especial.",
       "cook": ["alface", "cebola", "pão naan", "pepino", "rabanete", "tomate"],
@@ -10,15 +10,22 @@
     },
     {
       "id": 2,
-      "img": "../assets/Images/Twoo.png",
+      "img": "/assets/Images/Twoo.png",
       "title": "Rigatoni alla Vodka",
-      "discription": "A classic Italian-American pasta dish featuring large, ridged tube-shaped pasta (rigatoni) coated in a rich, creamy tomato and vodka sauce. The sauce has a smooth, velvety texture and is typically garnished with grated parmesan cheese and fresh basil leaves.",
-      "cook": ["Rigatoni pasta", "Vodka", "Tomato paste", "Heavy cream", "Parmesan cheese", "Fresh basil"],
+      "discription": "A classic Italian-American pasta dish featuring large, ridged tube-shaped pasta (rigatoni) coated in a rich, creamy tomato and vodka sauce.",
+      "cook": [
+        "Rigatoni pasta",
+        "Vodka",
+        "Tomato paste",
+        "Heavy cream",
+        "Parmesan cheese",
+        "Fresh basil"
+      ],
       "prece": "79,97"
     },
     {
       "id": 3,
-      "img": "../assets/Images/three.png",
+      "img": "/assets/Images/three.png",
       "title": "Torradas de Parma",
       "discription": "Presunto de parma e rúcula em um pão com fermentação natural.",
       "cook": ["alface", "cebola", "pão naan", "pepino", "rabanete", "tomate"],
