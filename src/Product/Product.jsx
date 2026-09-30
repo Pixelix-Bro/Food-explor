@@ -1,18 +1,18 @@
-import { Minus, Plus } from 'lucide-react'
+import { ArrowLeft, Minus, Plus } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
+import { toast } from 'sonner'
 import { VeloreButton, VeloreGlass } from 'velore'
 import { ApiClient } from '../hooks/Rest'
-import { decrement, increment } from '../Redux/ProductSlice'
-import { toast } from 'sonner';
+import { decrement, increment, order } from '../Redux/ProductSlice'
 
 export default function Product() {
   const { id } = useParams()
   const [data, setData] = useState(null)
   const dispatch = useDispatch()
   const count = useSelector((state) => state.counter.count)
-
+  const navigate = useNavigate()
   useEffect(() => {
     async function getProduct() {
       try {
@@ -29,31 +29,31 @@ export default function Product() {
   const item = data?.find((i) => i.id == id)
 
   return (
-    <div className="background h-screen ">
-      <div className="container items-center  flex h-full ">
-        <div className="flex grow h-full items-center">
-          <img src={item?.img} alt="" className="w-[500px]" />
+    <div className="background h-screen md:pt-0  pt-[140px]">
+      <div className="container items-center gap-[30px] flex-col flex sm:flex-row h-full ">
+        <div className="flex sm:grow   md:h-full md:w-auto w-full justify-center items-center">
+          <img src={item?.img} alt="" className="md:w-[500px] w-[50%]" />
         </div>
-        <VeloreGlass className="flex grow flex-col justify-center p-[20px] text-end gap-[20px] w-[700px] h-[400px]">
-          <div className="text-white text-[55px] font-bold">
+        <VeloreGlass className="flex sm:grow flex-col justify-center text-center p-[20px] md:text-end gap-[20px] md:w-[700px] md:h-[400px]">
+          <div className="text-white sm:text-[40px] text-[25px] md:text-[55px] font-bold">
             {item ? (
               item?.title
             ) : (
               <div className="w-full h-[70px] bg-white/30 backdrop-blur-3xl  rounded-3xl" />
             )}
           </div>
-          <div className="text-white">
+          <div className="text-white line-clamp-3">
             {item ? (
               item?.discription
             ) : (
               <div className="w-full h-[30px] bg-white/30 backdrop-blur-3xl  rounded-3xl" />
             )}
           </div>
-          <div className="text-white justify-end flex-wrap  flex gap-[10px]">
+          <div className="text-white md:justify-end flex-wrap justify-center  flex gap-[10px]">
             {item ? (
               item?.cook.map((i) => {
                 return (
-                  <span key={i} className=" p-[10px] vl-glass text-[14px]">
+                  <span key={i} className=" p-[10px] vl-glass text-[12px]  md:text-[14px]">
                     {i}
                   </span>
                 )
@@ -63,8 +63,8 @@ export default function Product() {
             )}
           </div>
 
-          <div className="flex justify-end gap-[30px]">
-            <div className="counter  flex gap-[20px] justify-center">
+          <div className="flex justify-end md:gap-[30px] gap-[10px]">
+            <div className="counter  flex md:gap-[20px] gap-[10px] justify-center">
               <VeloreButton onClick={() => dispatch(decrement(item?.id))}>
                 <Minus className="text-white" />
               </VeloreButton>
@@ -74,14 +74,28 @@ export default function Product() {
               </VeloreButton>
             </div>
             <VeloreButton
-              className="!text-white"
-              onClick={() => toast.success('Order received')}
+              onClick={() => {
+                toast.success('Order received')
+                dispatch(order(item?.id))
+              }}
             >
-              incluir · R${item?.prece}
+              <p
+                className="!text-white  line-clamp-1 text-[16px]
+               "
+              >
+                incluir · R${item?.prece}
+              </p>
             </VeloreButton>
           </div>
         </VeloreGlass>
       </div>
+
+      <VeloreButton
+        onClick={() => navigate(-1)}
+        className="absolute md:!hidden top-[89px] left-[12px] transition-all duration-150"
+      >
+        <ArrowLeft color='white' />
+      </VeloreButton>
     </div>
   )
 }

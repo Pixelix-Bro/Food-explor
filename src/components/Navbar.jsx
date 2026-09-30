@@ -1,17 +1,21 @@
 import { LogOut, Menu, Search, TicketCheck } from 'lucide-react'
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { VeloreButton, VeloreInput } from 'velore'
 import Logo from '../assets/logo.png'
+import { Opens } from '../Redux/BarsSlice'
 
 export default function Navbar() {
   const [search, setSearch] = useState(false)
+  const dispatch = useDispatch()
   return (
     <nav className="w-full bg-[#00111A] flex text-white fixed z-50">
       <div className="w-full justify-between flex items-center gap-[30px] container p-[20px] bg-[#00111A">
-        <VeloreButton className=" sm:!hidden">
+        <VeloreButton onClick={() => dispatch(Opens())} className=" sm:!hidden">
           <Menu />
         </VeloreButton>
+
         <div className="flex gap-[20px] items-center">
           <img src={Logo} alt="Logo" className="sm:w-[50px sm:h-[50px] h-[30px] w-auto" />
           <p className="text-[19px] font-bold  sm:text-[20px]">food explorer</p>

@@ -22,8 +22,16 @@ const ProductSlice = createSlice({
         state.count[id] -= 1
       }
     },
+
+    order: (state, action) => {
+      const id = action.payload
+
+      if (state.count[id] > 0) {
+        state.count[id] = 0
+      }
+    },
   },
 })
 
-export const { increment, decrement } = ProductSlice.actions
+export const { increment, decrement, order } = ProductSlice.actions
 export default ProductSlice.reducer
