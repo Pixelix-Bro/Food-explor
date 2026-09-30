@@ -34,7 +34,7 @@ export default function Product() {
         <div className="flex sm:grow   md:h-full md:w-auto w-full justify-center items-center">
           <img src={item?.img} alt="" className="md:w-[500px] w-[50%]" />
         </div>
-        <VeloreGlass className="flex sm:grow bg-white/5  backdrop-blur-[20px] flex-col justify-center text-center p-[20px] md:text-end gap-[20px] md:w-[700px] md:h-[400px]">
+        <VeloreGlass className="flex sm:grow flex-col justify-center text-center p-[20px] md:text-end gap-[20px] md:w-[700px] md:h-[400px]">
           <div className="text-white sm:text-[40px] text-[25px] md:text-[55px] font-bold">
             {item ? (
               item?.title
