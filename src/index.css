@@ -12,9 +12,8 @@ button {
   cursor: pointer;
 }
 
-
-body{
-  background-color: #000A0F;
+body {
+  background-color: #000a0f;
 }
 
 .refcetion::-webkit-scrollbar {
@@ -22,9 +21,16 @@ body{
 }
 
 .refcetion::-webkit-scrollbar-track {
-  background-color: #000A0F;
+  background-color: #000a0f;
 }
 
 .refcetion::-webkit-scrollbar-thumb {
   background-color: red;
+}
+
+.background {
+  background-image: url('./assets/Background.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
