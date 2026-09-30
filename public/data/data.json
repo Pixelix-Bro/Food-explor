@@ -2,7 +2,7 @@
   "Ref": [
     {
       "id": 1,
-      "img": "../src/assets/Images/One.png",
+      "img": "../../src/assets/Images/One.png",
       "title": "Salada Ravanello",
       "discription": "Rabanetes, folhas verdes e molho agridoce salpicados com gergelim. O pão naan dá um toque especial.",
       "cook": ["alface", "cebola", "pão naan", "pepino", "rabanete", "tomate"],
@@ -10,7 +10,7 @@
     },
     {
       "id": 2,
-      "img": "../src/assets/Images/Twoo.png",
+      "img": "../../src/assets/Images/Twoo.png",
       "title": "Spaguetti Gambe",
       "discription": "Massa fresca com camarões e pesto.",
       "cook": ["alface", "cebola", "pão naan", "pepino", "rabanete", "tomate"],
@@ -18,7 +18,7 @@
     },
     {
       "id": 3,
-      "img": "../src/assets/Images/three.png",
+      "img": "../../src/assets/Images/three.png",
       "title": "Torradas de Parma",
       "discription": "Presunto de parma e rúcula em um pão com fermentação natural.",
       "cook": ["alface", "cebola", "pão naan", "pepino", "rabanete", "tomate"],
