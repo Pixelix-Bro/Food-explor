@@ -65,11 +65,11 @@ export default function Refcetion() {
                       <Plus className="text-white" />
                     </VeloreButton>
                   </div>
-                  <div className="">
+                  <VeloreButton className="">
                     <Link to={`product/${i.id}`} className="w-full text-white">
                       incluir
                     </Link>
-                  </div>
+                  </VeloreButton>
                 </div>
               </div>
             )
