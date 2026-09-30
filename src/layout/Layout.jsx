@@ -8,7 +8,7 @@ export default function Layout() {
   return (
     <div>
       {location.pathname === '/login' || location.pathname === '/register' ? '' : <Navbar />}
-      <main className={`${location.pathname === `/product${id}` ? 'pt-[320px]' : 'pt-0 pb-0'}`}>
+      <main className={location.pathname === '/' ? 'pt-[120px]' : 'pt-0'}>
         <Outlet />
       </main>
       {location.pathname === '/login' || location.pathname === '/register' ? '' : <Footer />}

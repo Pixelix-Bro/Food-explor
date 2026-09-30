@@ -1,4 +1,5 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { Toaster } from 'sonner'
 import Layout from './layout/Layout'
 import Home from './pages/Home'
 import Login from './pages/Login'
@@ -31,5 +32,10 @@ const router = createBrowserRouter([
 ])
 
 export default function App() {
-  return <RouterProvider router={router} />
+  return (
+    <>
+      <RouterProvider router={router} />
+      <Toaster theme={'light'} position="top-center"  />
+    </>
+  )
 }

@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom'
 import { VeloreButton, VeloreGlass } from 'velore'
 import { ApiClient } from '../hooks/Rest'
 import { decrement, increment } from '../Redux/ProductSlice'
+import { toast } from 'sonner';
 
 export default function Product() {
   const { id } = useParams()
@@ -48,11 +49,11 @@ export default function Product() {
               <div className="w-full h-[30px] bg-white/30 backdrop-blur-3xl  rounded-3xl" />
             )}
           </div>
-          <div className="text-white justify-end  flex gap-[20px]">
+          <div className="text-white justify-end flex-wrap  flex gap-[10px]">
             {item ? (
               item?.cook.map((i) => {
                 return (
-                  <span key={i} className="p-[10px] vl-glass">
+                  <span key={i} className=" p-[10px] vl-glass text-[14px]">
                     {i}
                   </span>
                 )
@@ -72,7 +73,12 @@ export default function Product() {
                 <Plus className="text-white" />
               </VeloreButton>
             </div>
-            <VeloreButton className='!text-white'>incluir · R${item?.prece}</VeloreButton>
+            <VeloreButton
+              className="!text-white"
+              onClick={() => toast.success('Order received')}
+            >
+              incluir · R${item?.prece}
+            </VeloreButton>
           </div>
         </VeloreGlass>
       </div>
